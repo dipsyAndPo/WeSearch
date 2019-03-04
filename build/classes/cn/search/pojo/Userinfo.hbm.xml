@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-10-10 0:36:32 by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="cn.search.pojo.Userinfo" table="userinfo" catalog="search" optimistic-lock="version">
+        <id name="userId" type="java.lang.Integer">
+            <column name="userId" />
+            <generator class="identity" />
+        </id>
+        <property name="userName" type="string">
+            <column name="userName" length="20" not-null="true">
+                <comment>&#211;&#195;&#187;&#167;&#208;&#213;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="userAccount" type="string">
+            <column name="userAccount" length="18" not-null="true">
+                <comment>&#211;&#195;&#187;&#167;&#213;&#203;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="userPwd" type="string">
+            <column name="userPwd" length="18" not-null="true">
+                <comment>&#211;&#195;&#187;&#167;&#195;&#220;&#194;&#235;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

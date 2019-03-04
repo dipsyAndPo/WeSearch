@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2018-10-10 0:36:32 by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="cn.search.pojo.Urlinfo" table="urlinfo" catalog="search" optimistic-lock="version">
+        <id name="uid" type="java.lang.Integer">
+            <column name="uid" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="urlsortinfo" class="cn.search.pojo.Urlsortinfo" fetch="select">
+            <column name="urlsortid">
+                <comment>&#205;&#248;&#213;&#190;&#183;&#214;&#192;&#224;ID(&#205;&#226;&#188;&#252;)</comment>
+            </column>
+        </many-to-one>
+        <property name="urlName" type="string">
+            <column name="urlName" length="20" >
+                <comment>&#205;&#248;&#213;&#190;&#195;&#251;&#215;&#214;</comment>
+            </column>
+        </property>
+        <property name="urlWeblink" type="string">
+            <column name="urlWeblink" length="50" >
+                <comment>&#205;&#248;&#213;&#190;&#193;&#180;&#189;&#211;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

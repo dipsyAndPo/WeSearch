@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="default" namespace="/" extends="struts-default">
+		
+		<action name="index" class="cn.search.action.UrlSortAction" method="index">
+			<result name="success">index.jsp</result>
+		</action>
+		<action name="metaSearch" class="cn.search.action.UserAction" method="metaSearch">
+			<result name="success">Search.jsp</result>
+		</action>
+		<action name="urlinsert" class="cn.search.action.UrlAction" method="insert1">
+			<result name="success" type="redirectAction">index</result>
+		</action>
+		
+		
+	</package>
+	
+	<package name="admin_action" namespace="/admin" extends="struts-default">
+	<action name="urlsort_*" class="cn.search.action.UrlSortAction" method="{1}">
+			<result name="urlsorts">urlsorts.jsp</result>
+			<result name="list" type="chain">urlsort_list</result>
+			<result name="success">success</result>
+		</action>
+		
+		<action name="login" class="cn.search.action.UserAction" method="login">
+			<result name="success" type="chain">urlsort_list</result>
+		</action>
+		
+		<action name="url_*" class="cn.search.action.UrlAction" method="{1}">
+			<result name="list" type="chain">url_findBysortId</result>
+			<result name="urls">urls.jsp</result>
+			<result name="success">success</result>
+		</action>
+	</package>
+		
+</struts>
+   
